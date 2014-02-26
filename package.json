@@ -1,0 +1,27 @@
+{
+  "name": "krauss.io",
+  "version": "0.1.0",
+  "description": "My personal web powered by node.js and angular.js",
+  "main": "./app/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/maximilian-krauss/krauss.io.git"
+  },
+  "author": "Maximilian Krauss <max@krausshq.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/maximilian-krauss/krauss.io/issues"
+  },
+  "homepage": "https://github.com/maximilian-krauss/krauss.io",
+  "dependencies": {
+    "gulp": "~3.5.2",
+    "gulp-util": "~2.2.14",
+    "gulp-coffee": "~1.4.1",
+    "gulp-clean": "~0.2.4",
+    "express": "~3.4.8",
+    "gulp-bower": "0.0.2"
+  }
+}
