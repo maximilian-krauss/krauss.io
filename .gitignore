@@ -16,5 +16,5 @@ node_modules
 bower_components
 .idea
 
-public/js/*.js
-app/*.js
+public/js/**/*.js
+app/**/*.js
