@@ -4,7 +4,8 @@
   "description": "My personal web powered by node.js and angular.js",
   "main": "./app/app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "gulp"
   },
   "repository": {
     "type": "git",
@@ -22,6 +23,7 @@
     "gulp-coffee": "~1.4.1",
     "gulp-clean": "~0.2.4",
     "express": "~3.4.8",
-    "gulp-bower": "0.0.2"
+    "gulp-bower": "0.0.2",
+    "rssparser": "0.0.4"
   }
 }
