@@ -14,18 +14,28 @@ gulp.task('clean-directories', ['bower'], function() {
 
 	gulp.src('./public/js/**/*.js')
 		.pipe(clean({ read: false, force: true }));
+	gulp.src('./public/html/**/*.html')
+		.pipe(clean({ read: false, force: true }));
+	gulp.src('./public/css/**/*.css')
+		.pipe(clean({ read: false, force: true }));
 });
 
 gulp.task('compile-server', ['clean-directories'], function() {
 	gulp.src('./src/server/**/*.coffee')
-		.pipe(coffee({ bare: false }))
+		.pipe(coffee({ bare: false }).on('error', gutil.log))
 		.pipe(gulp.dest('./app'));
 });
 
 gulp.task('compile-client', ['clean-directories'], function() {
 	gulp.src('./src/client/**/*.coffee')
-		.pipe(coffee({ bare: false }))
+		.pipe(coffee({ bare: false }).on('error', gutil.log))
 		.pipe(gulp.dest('./public/js'));
+
+	gulp.src('./src/client/html/**/*.html')
+		.pipe(gulp.dest('./public/html'));
+
+	gulp.src('./src/client/css/**/*.css')
+		.pipe(gulp.dest('./public/css'));
 });
 
 

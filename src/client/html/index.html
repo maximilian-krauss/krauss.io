@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Maximilian Krauß</title>
+
+		<link rel='stylesheet' href='/static-vendor/animate.css/animate.min.css' />
+		<link rel='stylesheet' href='/static-vendor/uikit/dist/css/uikit.min.css' />
+		<link rel='stylesheet' href='/static-vendor/angular-loading-bar/build/loading-bar.min.css' />
+		<link rel='stylesheet' href='//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css' />
+		<link rel='stylesheet' href='/static-vendor/nvd3/nv.d3.min.css'/>
+		<link rel='stylesheet' href='//fonts.googleapis.com/css?family=Lato:400,900'/>
+		<link rel='stylesheet' href='/static/css/style.css'/>
+	</head>
+	<body>
+
+<header>
+		<div class='view-port'>
+			<h1><a href='/'>
+				<span class='bold'>Maximilian</span>
+				<span class='spanfix'> Krauß</span>
+			</a></h1>
+			<h3> Hi there, I'm Max, a frontend/backend dev guy based in Berlin.</h3>
+		</div>
+</header>
+		<khq-teaser></khq-teaser>
+
+	<div>
+		<div ng-view class='content-view'></div>
+	</div>
+
+	<footer ng-controller='FooterCtrl')
+		<div class='view-port'>
+			<p> Copyright &copy; <span ng-bind="currentYear"></span> Maximilian Krauß |
+				<a href='/imprint'>Contact</a>
+			</p>
+		</div>
+	</footer>
+		<script src='/static-vendor/jquery/dist/jquery.min.js'></script>
+		<script src='/static-vendor/angular/angular.min.js'></script>
+		<script src='/static-vendor/angular-route/angular-route.min.js'></script>
+		<script src='/static-vendor/angular-animate/angular-animate.min.js'></script>
+		<script src='/static-vendor/angular-loading-bar/build/loading-bar.min.js'></script>
+		<script src='/static-vendor/showdown/compressed/showdown.js'></script>
+		<script src='/static-vendor/uikit/dist/js/uikit.min.js'></script>
+		<script src='/static-vendor/d3/d3.min.js'></script>
+		<script src='/static-vendor/nvd3/nv.d3.min.js'></script>
+		<script src='/static-vendor/angularjs-nvd3-directives/dist/angularjs-nvd3-directives.js'></script>
+		<script src='/static-vendor/moment/moment.js'></script>
+
+		<script(src='/static/js/app.js'></script>
+		<script(src='/static/js/app.controllers.js'></script>
+		<script(src='/static/js/app.directives.js'></script>
+		<script(src='/static/js/app.services.js'></script>
+	</body>
+</html>

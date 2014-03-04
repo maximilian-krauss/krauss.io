@@ -17,4 +17,6 @@ bower_components
 .idea
 
 public/js/**/*.js
+public/html/**/*.html
+public/css/**/*.css
 app/**/*.js

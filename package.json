@@ -24,6 +24,10 @@
     "gulp-clean": "~0.2.4",
     "express": "~3.4.8",
     "gulp-bower": "0.0.2",
-    "rssparser": "0.0.4"
+    "rssparser": "0.0.4",
+    "string": "~1.8.0",
+    "underscore": "~1.6.0",
+    "moment": "~2.5.1",
+    "q": "~1.0.0"
   }
 }

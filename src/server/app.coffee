@@ -13,15 +13,15 @@ app         = express()
 
 # all environments
 app.set "port", process.env.PORT or 3000
-app.set "views", "#{__dirname}/views"
-app.set "view engine", "jade"
+#app.set "views", "#{__dirname}/views"
+#app.set "view engine", "jade"
 app.use express.logger("dev")
 app.use express.urlencoded()
 app.use express.json()
 app.use express.methodOverride()
-app.use "/static", express.static(path.join(__dirname, "public"))
-app.use "/static-vendor", express.static(path.join(__dirname, "bower_components"))
-app.use express.favicon(path.join(__dirname, "public/images/favicon.ico"))
+app.use "/static", express.static(path.join(__dirname, "../public"))
+app.use "/static-vendor", express.static(path.join(__dirname, "../bower_components"))
+app.use express.favicon(path.join(__dirname, "../public/images/favicon.ico"))
 app.use graveyard.reaper
 app.use app.router
 app.disable "x-powered-by"
