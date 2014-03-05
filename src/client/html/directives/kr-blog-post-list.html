@@ -1,0 +1,12 @@
+<div class="directive blog-post-list">
+	<kr-loader ng-show="isBusy">loading posts, please wait...</kr-loader>
+	<div ng-hide="isBusy">
+		<ul class="uk-list uk-list-line">
+			<li ng-repeat="post in postList"><a ng-href="{{post.url}}" target="_blank">
+				{{post.title}}
+				<i class="fa fa-external-link"></i></a>
+				<span ng-bind="post.timeAgo" class="time-ago spanfix"></span>
+			</li>
+		</ul>
+	</div>
+</div>

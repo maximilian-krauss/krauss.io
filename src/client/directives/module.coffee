@@ -1,3 +1,4 @@
-angular.module 'krauss.io.directives', [
-	'ngRoute'
+angular.module "krauss.io.directives", [
+	"ngRoute"
+	"krauss.io.services"
 ]

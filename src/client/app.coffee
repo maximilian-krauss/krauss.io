@@ -1,11 +1,22 @@
 app = angular.module 'krauss.io', [
-	'krauss.io.controllers',
+	'ngRoute'
+	'ngAnimate'
+	'angular-loading-bar'
+	'nvd3ChartDirectives'
+	'krauss.io.controllers'
 	'krauss.io.directives'
 ]
 
 app.config [
-	'$routeProvider',
 	'$locationProvider',
-	($routeProvider, $locationProvider) ->
+	($locationProvider) ->
+		$locationProvider.html5Mode true
+		return
+]
+
+app.run [
+	'$rootScope',
+	($rootScope) ->
+		console.log $rootScope
 		return
 ]
