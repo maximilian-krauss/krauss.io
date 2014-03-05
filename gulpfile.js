@@ -39,9 +39,7 @@ gulp.task('compile-client', ['clean-directories'], function() {
 });
 
 
-gulp.task('default', function() {
-	gulp.run('heroku:production');
-});
+gulp.task('default', ['heroku:production'] );
 
 gulp.task('heroku:production', [
 	'compile-server',
