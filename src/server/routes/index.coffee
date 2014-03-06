@@ -70,7 +70,7 @@ exports.teaserImage = (req, res) ->
 
 exports.rawTeaserImage = (req, res) ->
 	location = req.query.l
-	imagePath = path.join appRoot, 'public', 'images'
+	imagePath = path.join appRoot, '..', 'public', 'images'
 	imageLocation = path.join imagePath, config.app.fallbackTeaser
 
 	if location?

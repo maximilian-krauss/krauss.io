@@ -6,10 +6,10 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "postinstall": "gulp",
-	"start": "node ./app/app.js"
+    "start": "node ./app/app.js"
   },
   "engines": {
-	  "node": ">=0.10.26"
+    "node": ">=0.10.26"
   },
   "private": true,
   "repository": {
@@ -23,16 +23,17 @@
   },
   "homepage": "https://github.com/maximilian-krauss/krauss.io",
   "dependencies": {
-    "gulp": "~3.5.2",
-    "gulp-util": "~2.2.14",
-    "gulp-coffee": "~1.4.1",
-    "gulp-clean": "~0.2.4",
+    "gulp": "~3",
+    "gulp-util": "~2",
+    "gulp-coffee": "~1",
+    "gulp-clean": "latest",
     "express": "~3.4.8",
-    "gulp-bower": "0.0.2",
+    "gulp-bower": "0.0.3",
     "rssparser": "0.0.4",
     "string": "~1.8.0",
     "underscore": "~1.6.0",
     "moment": "~2.5.1",
-    "q": "~1.0.0"
+    "q": "~1.0.0",
+    "gulp-concat": "~2"
   }
 }

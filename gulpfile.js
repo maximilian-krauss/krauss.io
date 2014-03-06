@@ -2,7 +2,8 @@ var gulp    = require('gulp'),
 	gutil   = require('gulp-util'),
 	coffee  = require('gulp-coffee'),
 	clean   = require('gulp-clean'),
-	bower   = require('gulp-bower');
+	bower   = require('gulp-bower'),
+	concat  = require('gulp-concat');
 
 gulp.task('bower', function() {
 	return bower();
