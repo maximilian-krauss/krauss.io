@@ -13,14 +13,14 @@ angular.module('krauss.io.directives').directive 'krTeaser', [
 		link: (scope, elem, attrs) ->
 			scope.teaserStyle = "background-image": ""
 			cancellationToken = $q.defer()
-			console.log apiEndpoints.getRawTeaserImage + $location.path()
+			console.log apiEndpoints.getTeaserImage + $location.path()
 			getTeaserImageForLocation = ->
 				$http(
 					method: "GET"
-					url: apiEndpoints.getRawTeaserImage + $location.path()
+					url: apiEndpoints.getTeaserImage + $location.path()
 					timeout: cancellationToken
 				).success((image) ->
-					scope.teaserStyle["background-image"] = "url(data:image/jpg;base64,#{image.data})"
+					scope.teaserStyle["background-image"] = "url(#{image})"
 					return
 				).error ->
 					scope.teaserStyle["background-image"] = ""

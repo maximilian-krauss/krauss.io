@@ -3,6 +3,7 @@ app = angular.module 'krauss.io', [
 	'ngAnimate'
 	'angular-loading-bar'
 	'nvd3ChartDirectives'
+	'krauss.io.services'
 	'krauss.io.controllers'
 	'krauss.io.directives'
 ]

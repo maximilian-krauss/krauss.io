@@ -1,5 +1,6 @@
 kraussIOControllers = angular.module "krauss.io.controllers", [
 	"ngRoute"
+	"krauss.io.services"
 	"krauss.io.directives"
 ]
 

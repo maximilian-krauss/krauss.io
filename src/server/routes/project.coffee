@@ -33,7 +33,7 @@ exports.detail = (req, res) ->
 		return
 	try
 		res.header "Content-Type", "application/json"
-		res.send fs.readFileSync(path.join(appRoot, "public", "project-assets", project.id, "app.json"), "utf8")
+		res.send fs.readFileSync(path.join(appRoot, "..", "public", "project-assets", project.id, "app.json"), "utf8")
 	catch err
 		res.status(404).send "project not found"
 	return

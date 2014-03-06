@@ -1,0 +1,45 @@
+<div ng-init="initialize()" class="view-port project-detail">
+  <khq-loader ng-show="isBusy">Loading project data, please wait...</khq-loader>
+
+  <article ng-hide="isBusy" class="uk-article">
+    <h1 ng-bind="project.name" class="uk-article-title"></h1>
+
+    <p class="uk-article-meta">Latest version: {{project.version}}</p>
+    <a ng-href="{{project.setupUrl}}" target="_blank" class="uk-button uk-button-success"><i class="fa fa-download icon-large"></i> Download </a>
+    <a ng-href="{{project.githubUrl}}" target="_blank" class="uk-button uk-button-primary"><i class="fa fa-github icon-large"></i> GitHub </a>
+
+    <div class="uk-button-group github-info">
+      <a ng-href="" class="uk-button"><i class="fa fa-star fa-large"></i> Stars: {{githubInfo.stargazers}}</a>
+      <a ng-href="" class="uk-button"><i class="fa fa-code-fork fa-large"></i> Forks: {{githubInfo.forks}}</a>
+    </div>
+
+  <p ng-bind="project.description" class="uk-article-lead"></p>
+
+  <div class="project-description">
+    <khq-markdown khq-src="project.descriptionUrl"></khq-markdown>
+  </div>
+  <hr class="uk-article-divider"/>
+
+  <div class="project-reporting">
+    <h2>App usage</h2>
+    <khq-loader ng-hide="isChartReady">Loading usage data ...</khq-loader>
+    <div ng-show="isChartReady">
+      <nvd3-line-chart data="reportingData"
+                        id="appPings"
+                        height="250"
+                        showXAxis="true"
+                        showYAxis="true"
+                        tooltips="true"
+                        margin="{left:50,top:20,bottom:40,right:50}"
+                        xAxisTickFormat="xAxisTickFormat()"
+                        interactive="true">
+        <svg></svg>
+      </nvd3-line-chart>
+
+      <p>Average (pingbacks/day):
+        <span ng-bind="averagePingbacksPerDay" class="spanfix"></span>
+      </p>
+    </div>
+  </div>
+</article>
+</div>
