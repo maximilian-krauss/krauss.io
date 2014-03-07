@@ -9,12 +9,11 @@ reporting   = require "./routes/reporting"
 graveyard   = require "./middleware/graveyard"
 http        = require "http"
 path        = require "path"
+dotenv      = require "dotenv"
 app         = express()
 
 # all environments
 app.set "port", process.env.PORT or 3000
-#app.set "views", "#{__dirname}/views"
-#app.set "view engine", "jade"
 app.use express.logger("dev")
 app.use express.urlencoded()
 app.use express.json()
@@ -25,6 +24,8 @@ app.use express.favicon(path.join(__dirname, "../public/images/favicon.ico"))
 app.use graveyard.reaper
 app.use app.router
 app.disable "x-powered-by"
+
+dotenv.load()
 
 # development only
 app.use express.errorHandler()  if "development" is app.get("env")
