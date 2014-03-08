@@ -16,8 +16,8 @@
     "tests"
   ],
   "dependencies": {
-    "angular": "~1.2",
-    "angular-route": "~1.2",
+    "angular": "~1.2.15",
+    "angular-route": "~1.2.15",
     "jquery": "~2",
     "uikit": "~2",
     "showdown": "latest",
@@ -30,6 +30,6 @@
   "resolutions": {
     "jquery": "~2.1.0",
     "d3": "3.3.11",
-    "angular": "~1.2"
+    "angular": "~1.2.15"
   }
 }
