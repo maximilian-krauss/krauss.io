@@ -1,4 +1,4 @@
-angular.module('krauss.io.directives').directive "krMarkdown", [
+angular.module('krauss.io').directive "krMarkdown", [
 	"$http"
 	($http) ->
 	converter = new Showdown.converter()

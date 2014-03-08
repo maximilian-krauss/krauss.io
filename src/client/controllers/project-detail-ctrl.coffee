@@ -1,4 +1,4 @@
-angular.module('krauss.io.controllers').controller "ProjectDetailCtrl", [
+angular.module('krauss.io').controller "ProjectDetailCtrl", [
 	"$scope"
 	"$routeParams"
 	"$http"

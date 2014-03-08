@@ -1,4 +1,4 @@
-angular.module('krauss.io.directives').directive 'krTeaser', [
+angular.module('krauss.io').directive 'krTeaser', [
 	'$http'
 	'$route'
 	'$location'
@@ -13,7 +13,7 @@ angular.module('krauss.io.directives').directive 'krTeaser', [
 		link: (scope, elem, attrs) ->
 			scope.teaserStyle = "background-image": ""
 			cancellationToken = $q.defer()
-			console.log apiEndpoints.getTeaserImage + $location.path()
+
 			getTeaserImageForLocation = ->
 				$http(
 					method: "GET"

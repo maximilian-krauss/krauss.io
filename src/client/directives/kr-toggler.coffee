@@ -1,4 +1,4 @@
-angular.module('krauss.io.directives').directive "krToggler", [
+angular.module('krauss.io').directive "krToggler", [
 	"directiveViewRoot"
 	(directiveViewRoot) ->
 		restrict: "E"

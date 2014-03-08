@@ -1,4 +1,4 @@
-angular.module('krauss.io.controllers').controller 'FooterCtrl', [
+angular.module('krauss.io').controller 'FooterCtrl', [
 	'$scope',
 	($scope) ->
 		return

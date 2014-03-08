@@ -1,4 +1,4 @@
-angular.module('krauss.io.controllers').controller 'Http404Ctrl', [
+angular.module('krauss.io').controller 'Http404Ctrl', [
 	'$scope',
 	($scope) ->
 		return

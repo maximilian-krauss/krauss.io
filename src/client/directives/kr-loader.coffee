@@ -1,4 +1,4 @@
-angular.module('krauss.io.directives').directive 'krLoader', ->
+angular.module('krauss.io').directive 'krLoader', ->
 	restrict: 'E'
 	replace: true
 	transclude: true

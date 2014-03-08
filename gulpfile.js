@@ -28,9 +28,10 @@ gulp.task('compile-server', ['clean-directories'], function() {
 });
 
 gulp.task('compile-client', ['clean-directories'], function() {
-	gulp.src('./src/client/**/*.coffee')
+	gulp.src(['./src/client/app.coffee', './src/client/**/*.coffee'])
 		.pipe(coffee({ bare: false }).on('error', gutil.log))
-		.pipe(gulp.dest('./public/js'));
+		.pipe(concat('app.js'))
+		.pipe(gulp.dest('./public/js'))
 
 	gulp.src('./src/client/html/**/*.html')
 		.pipe(gulp.dest('./public/html'));

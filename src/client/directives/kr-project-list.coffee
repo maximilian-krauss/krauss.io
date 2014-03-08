@@ -1,4 +1,4 @@
-angular.module('krauss.io.directives').directive "krProjectList", [
+angular.module('krauss.io').directive "krProjectList", [
 	"$http"
 	"apiEndpoints"
 	"directiveViewRoot"

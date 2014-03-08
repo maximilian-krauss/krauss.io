@@ -1,4 +1,4 @@
-angular.module('krauss.io.controllers').controller 'ImprintCtrl', [
+angular.module('krauss.io').controller 'ImprintCtrl', [
 	'$scope',
 	($scope) ->
 		return
