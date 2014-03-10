@@ -14,6 +14,7 @@ app         = express()
 
 # all environments
 app.set "port", process.env.PORT or 3000
+app.use express.compress()
 app.use express.logger("dev")
 app.use express.urlencoded()
 app.use express.json()
