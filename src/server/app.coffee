@@ -31,11 +31,6 @@ dotenv.load()
 # development only
 app.use express.errorHandler()  if "development" is app.get("env")
 
-# view engine
-app.get "/", routes.index
-app.get "/partials/directives/:name", routes.directive
-app.get "/partials/:name", routes.partial
-
 # api
 app.get "/api/projects", project.list
 app.get "/api/github/:name", project.githubFacts
@@ -45,8 +40,9 @@ app.get "/api/blog/latest", blog.latest
 app.get "/api/teaser-image", routes.teaserImage
 app.get "/api/raw-teaser-image", routes.rawTeaserImage
 
-# fallback
+# SPA view
 app.get "*", routes.index
+
 http.createServer(app).listen app.get("port"), ->
 	console.log "Yippie kay yeah motherfuckers, battleship up and running on port " + app.get("port")
 	return

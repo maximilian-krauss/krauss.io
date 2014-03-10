@@ -24,24 +24,6 @@ exports.index = (req, res) ->
 
 
 #
-# * GET /partials/:name
-# * Render partial views
-#
-exports.partial = (req, res) ->
-	res.render "partials/" + req.params.name
-	return
-
-
-#
-# * GET /partials/directives/:name
-# * Render angular.js directive html
-#
-exports.directive = (req, res) ->
-	res.render "partials/directives/" + req.params.name
-	return
-
-
-#
 # * GET /api/teaser-image?l=location
 # * teaser image
 #
