@@ -3,6 +3,8 @@ app = angular.module 'krauss.io', [
 	'ngAnimate'
 	'angular-loading-bar'
 	'nvd3ChartDirectives'
+	'angulartics'
+	'angulartics.google.analytics'
 ]
 
 app.config [
