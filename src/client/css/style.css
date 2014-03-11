@@ -54,6 +54,26 @@ header h3 {
     font-size: 16px;
 }
 
+header .social-icon a {
+  color: #949494;
+}
+
+header .social-icon i {
+  font-size: 26px;
+}
+
+header .social-icon.github i:hover {
+  color: #171515;
+}
+
+header .social-icon.twitter i:hover {
+  color: #55acee:
+}
+
+header .social-icon.xing i:hover {
+  color: #126567;
+}
+
 footer {
     font-size: 12px;
     color: #CACACA;

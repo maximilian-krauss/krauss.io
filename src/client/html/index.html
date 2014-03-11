@@ -22,6 +22,17 @@
 				</a>
 			</h1>
 			<h3>Hi there, I'm Max, a frontend/backend dev guy based in Berlin.</h3>
+
+			<div class="social-icons">
+				<ul class="uk-subnav">
+					<li ng-repeat="socialIcon in socialIcons" class="social-icon {{socialIcon.icon}}">
+						<a ng-href="{{socialIcon.link}}" title="{{socialIcon.title}}" target="_blank">
+							<i class="fa fa-{{socialIcon.icon}}"></i>
+						</a>
+					</li>
+				</ul>
+			</div>
+
 		</div>
 		<kr-teaser></kr-teaser>
 	</header>

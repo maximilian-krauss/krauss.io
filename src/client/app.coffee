@@ -45,5 +45,22 @@ app.config [
 app.run [
 	'$rootScope',
 	($rootScope) ->
+		$rootScope.socialIcons = [
+				{
+					title: 'GitHub'
+					icon: 'github'
+					link: 'https://github.com/maximilian-krauss'
+				}
+				{
+					title: 'Twitter'
+					icon: 'twitter'
+					link: 'https://twitter.com/DonnieBerlin'
+				}
+				{
+					title: 'XING'
+					icon: 'xing'
+					link: 'https://www.xing.com/profile/Maximilian_Krauss6'
+				}
+		]
 		return
 ]
