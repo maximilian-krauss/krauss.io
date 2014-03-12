@@ -59,15 +59,18 @@ header .social-icon a {
 }
 
 header .social-icon i {
-  font-size: 26px;
+    font-size: 26px;
+	transition: color 0.25s ease-in;
+	-webkit-transition: color 0.25s ease-in;
 }
 
 header .social-icon.github i:hover {
   color: #171515;
 }
 
+
 header .social-icon.twitter i:hover {
-  color: #55acee:
+  color: #55acee;
 }
 
 header .social-icon.xing i:hover {
