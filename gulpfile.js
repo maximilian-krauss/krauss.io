@@ -67,7 +67,6 @@ gulp.task('compile-client', ['clean-directories'], function() {
 		.pipe(gulp.dest('./public/css'));
 });
 
-
 gulp.task('default', ['heroku:production'] );
 
 gulp.task('heroku:production', [
