@@ -26,7 +26,8 @@
     "angularjs-nvd3-directives": "latest",
     "momentjs": "~2",
     "animate.css": "~3",
-    "angulartics": "~0.14.15"
+    "angulartics": "~0.14.15",
+    "components-font-awesome": "~4.0.3"
   },
   "resolutions": {
     "jquery": "~2",
