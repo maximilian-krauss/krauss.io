@@ -4,7 +4,7 @@
   "description": "My personal web powered by node.js and angular.js",
   "main": "./app/app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "mocha ./app/test",
     "postinstall": "gulp",
     "start": "node ./app/app.js"
   },
@@ -36,6 +36,7 @@
     "q": "~1.0.0",
     "gulp-concat": "~2",
     "dotenv": "~0.2.5",
-    "chai": "~1.9.0"
+    "chai": "~1.9.0",
+    "mocha": "~1.18.0"
   }
 }
