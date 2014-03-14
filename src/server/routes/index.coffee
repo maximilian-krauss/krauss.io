@@ -3,6 +3,7 @@ fs      = require('fs')
 path    = require('path')
 config  = require("../config")
 appRoot = path.dirname(require.main.filename)
+teaser  = require '../app_modules/teaser'
 
 readAndConvertImageContents = (path, callback) ->
 	fs.readFile(path, null, (err, data)->
@@ -28,26 +29,7 @@ exports.index = (req, res) ->
 # * teaser image
 #
 exports.teaserImage = (req, res) ->
-	location = req.query.l
-	imageLocation = "/" + [
-		"static"
-		"images"
-	].join("/")
-	fallbackImageUrl = [
-		imageLocation
-		config.app.fallbackTeaser
-	].join("/")
-	if location isnt `undefined`
-		teaser = _(config.app.teaserMap).find((item) ->
-			item.location.toLowerCase() is location.toLowerCase()
-		)
-		if teaser isnt `undefined`
-			res.send [
-				imageLocation
-				teaser.image
-			].join("/")
-			return
-	res.send fallbackImageUrl
+	res.send teaser.image req.query.l
 	return
 
 exports.rawTeaserImage = (req, res) ->
