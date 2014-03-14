@@ -1,23 +1,24 @@
 config	= require("../config")
-env		 = require("./environment")
+env		= require("./environment")
 https 	= require("https")
 
 buildRequest = (projectId) ->
 
-	#Env. Variable GITHUB_ACCESS_TOKEN is not stored here. It's injected by heroku. Check heroku config --app krausshq
-	authHeader = "Basic " + new Buffer(env.get("GITHUB_ACCESS_TOKEN") + ":x-oauth-basic").toString("base64")
-	headers:
-		accept: "*/*"
-		"user-agent": config.github.username
-		authorization: authHeader
+	#Env. Variable GITHUB_ACCESS_TOKEN is not stored here. It's injected by heroku. Check heroku config --app krauss-io
+	githubToken = env.get "GITHUB_ACCESS_TOKEN"
 
-	host: config.github.apiHost
-	port: 443
-	path: "/" + [
-		"repos"
-		config.github.username
-		projectId
-	].join("/")
+	request =
+		headers:
+			accept: "*/*"
+			"user-agent": config.github.username
+		host: config.github.apiHost
+		port: 443
+		path: "/" + ["repos", config.github.username, projectId].join "/"
+
+	if githubToken?
+		request.headers.authorization = "Basic " + new Buffer(githubToken + ":x-oauth-basic").toString("base64")
+
+	request
 
 buildRepositoryData = (rawData) ->
 	repoInformation = JSON.parse(rawData)
