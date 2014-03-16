@@ -37,7 +37,6 @@
     "gulp-concat": "~2",
     "dotenv": "~0.2.5",
     "chai": "~1.9.0",
-    "mocha": "~1.18.0",
-    "express-seojs": "0.0.5"
+    "mocha": "~1.18.0"
   }
 }

@@ -10,16 +10,10 @@ graveyard   = require "./middleware/graveyard"
 http        = require "http"
 path        = require "path"
 dotenv      = require "dotenv"
-seojs			 = require "express-seojs"
 env				 = require "./app_modules/environment"
 app         = express()
 
 dotenv.load()
-
-# production only
-if (env.get("NODE_ENV")? is "production")
-	console.log "production ftw!"
-	app.use(seojs(env.get("SEOJS_TOKEN")))
 
 # all environments
 app.set "port", process.env.PORT or 3000
@@ -34,7 +28,6 @@ app.use express.favicon(path.join(__dirname, "../public/images/favicon.ico"))
 app.use graveyard.reaper
 app.use app.router
 app.disable "x-powered-by"
-
 
 # development only
 app.use express.errorHandler()  if "development" is app.get("env")
