@@ -10,6 +10,8 @@ graveyard   = require "./middleware/graveyard"
 http        = require "http"
 path        = require "path"
 dotenv      = require "dotenv"
+seojs			 = require "express-seojs"
+env				 = require "./app_modules/environment"
 app         = express()
 
 # all environments
@@ -27,6 +29,11 @@ app.use app.router
 app.disable "x-powered-by"
 
 dotenv.load()
+
+
+if (env.get("NODE_ENV")? is "production")
+	console.log "production ftw!"
+	app.use(seojs(env.get("SEOJS_TOKEN")))
 
 # development only
 app.use express.errorHandler()  if "development" is app.get("env")
