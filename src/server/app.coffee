@@ -39,7 +39,6 @@ app.get "/api/project/:name", project.detail
 app.get "/api/reports/:name", reporting.appReport
 app.get "/api/blog/latest", blog.latest
 app.get "/api/teaser-image", routes.teaserImage
-app.get "/api/raw-teaser-image", routes.rawTeaserImage
 
 # SPA view
 app.get "*", routes.index
