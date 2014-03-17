@@ -4,6 +4,7 @@ var gulp            = require('gulp'),
 	clean           = require('gulp-clean'),
 	bower           = require('gulp-bower'),
 	concat          = require('gulp-concat'),
+	stylus			= require('gulp-stylus'),
 	bowerPath       = './bower_components',
 	thirdPartyLibs  = [
 		'jquery/dist/jquery.min.js',
@@ -63,8 +64,9 @@ gulp.task('compile-client', ['clean-directories'], function() {
 	gulp.src('./src/client/html/**/*.html')
 		.pipe(gulp.dest('./public/html'));
 
-	gulp.src('./src/client/css/**/*.css')
-		.pipe(gulp.dest('./public/css'));
+	gulp.src('./src/client/styles/**/*.styl')
+		.pipe(stylus({set: ['compress']}))
+		.pipe(gulp.dest('./public/css'))
 });
 
 gulp.task('default', ['heroku:production'] );
