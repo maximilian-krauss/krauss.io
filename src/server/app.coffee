@@ -11,6 +11,7 @@ http        = require "http"
 path        = require "path"
 dotenv      = require "dotenv"
 env				 = require "./app_modules/environment"
+prerender	 = require "prerender-node"
 app         = express()
 
 dotenv.load()
@@ -21,6 +22,7 @@ app.use express.compress()
 app.use express.logger("dev")
 app.use express.urlencoded()
 app.use express.json()
+app.use prerender.set "prerenderToken", "DEEUcG8XdXOXdW4mFDtZ"
 app.use express.methodOverride()
 app.use "/static", express.static(path.join(__dirname, "../public"))
 app.use "/static-vendor", express.static(path.join(__dirname, "../bower_components"))
