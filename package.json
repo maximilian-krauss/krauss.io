@@ -23,7 +23,7 @@
   },
   "homepage": "https://github.com/maximilian-krauss/krauss.io",
   "dependencies": {
-    "gulp": "~3",
+    "gulp": "~3.5.6",
     "gulp-util": "~2",
     "gulp-coffee": "~1",
     "gulp-clean": "latest",
@@ -34,10 +34,10 @@
     "underscore": "~1.6.0",
     "moment": "~2.5.1",
     "q": "~1.0.0",
-    "gulp-concat": "~2",
+    "gulp-concat": "~2.2.0",
     "dotenv": "~0.2.5",
     "chai": "~1.9.0",
-    "mocha": "~1.18.0",
+    "mocha": "~1.18.2",
     "gulp-stylus": "^0.1.0"
   }
 }
