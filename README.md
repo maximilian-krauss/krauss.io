@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/maximilian-krauss/krauss.io.png?branch=master)](https://travis-ci.org/maximilian-krauss/krauss.io)
+[![Build Status](https://travis-ci.org/maximilian-krauss/krauss.io.svg?branch=master)](https://travis-ci.org/maximilian-krauss/krauss.io)
 
 krauss.io
 =========
