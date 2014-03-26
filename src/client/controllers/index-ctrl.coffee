@@ -1,5 +1,6 @@
 angular.module('krauss.io').controller 'IndexCtrl', [
 	'$scope'
-	($scope) ->
+	'socketFactory'
+	($scope, socketFactory) ->
 		return
 ]
