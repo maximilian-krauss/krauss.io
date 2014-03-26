@@ -12,9 +12,6 @@ path        = require "path"
 dotenv      = require "dotenv"
 env				 = require "./app_modules/environment"
 app         = express()
-server			= http.createServer(app)
-io					= require('socket.io').listen(server)
-
 
 dotenv.load()
 
@@ -32,8 +29,6 @@ app.use graveyard.reaper
 app.use app.router
 app.disable "x-powered-by"
 
-io.set('log level', 1)
-
 # development only
 app.use express.errorHandler()  if "development" is app.get("env")
 
@@ -48,6 +43,6 @@ app.get "/api/teaser-image", routes.teaserImage
 # SPA view
 app.get "*", routes.index
 
-server.listen app.get("port"), ->
+http.createServer(app).listen app.get("port"), ->
 	console.log "Yippie kay yeah motherfuckers, battleship up and running on port " + app.get("port")
 	return
