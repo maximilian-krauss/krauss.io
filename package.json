@@ -38,6 +38,7 @@
     "dotenv": "~0.2.5",
     "chai": "~1.9.0",
     "mocha": "~1.18.2",
-    "gulp-stylus": "^0.1.0"
+    "gulp-stylus": "^0.1.0",
+    "node-force-domain": "^0.1.0"
   }
 }

@@ -16,6 +16,7 @@ config =
 		path: "pings"
 
 	app:
+		hostname: "krauss.io",
 		teaserMap: [
 			{
 				location: "/imprint"

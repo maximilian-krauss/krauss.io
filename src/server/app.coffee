@@ -1,6 +1,7 @@
 ###
 Module dependencies.
 ###
+config			= require "./config"
 express     = require "express"
 routes      = require "./routes"
 project     = require "./routes/project"
@@ -11,6 +12,7 @@ http        = require "http"
 path        = require "path"
 dotenv      = require "dotenv"
 env				 = require "./app_modules/environment"
+forceDomain = require "node-force-domain"
 app         = express()
 
 dotenv.load()
@@ -22,6 +24,7 @@ app.use express.logger("dev")
 app.use express.urlencoded()
 app.use express.json()
 app.use express.methodOverride()
+app.use forceDomain { hostname: config.app.hostname, type: "permanent" }
 app.use "/static", express.static(path.join(__dirname, "../public"))
 app.use "/static-vendor", express.static(path.join(__dirname, "../bower_components"))
 app.use express.favicon(path.join(__dirname, "../public/images/favicon.ico"))
