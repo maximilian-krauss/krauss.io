@@ -19,7 +19,7 @@ var gulp            = require('gulp'),
 		'd3/d3.min.js',
 		'nvd3/nv.d3.min.js',
 		'angularjs-nvd3-directives/dist/angularjs-nvd3-directives.js',
-		'moment/moment.js'
+		'momentjs/min/moment.min.js'
 	];
 
 gulp.task('bower', function() {
