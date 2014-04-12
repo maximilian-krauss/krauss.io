@@ -68,6 +68,11 @@ app.run [
 					icon: 'xing'
 					link: 'https://www.xing.com/profile/Maximilian_Krauss6'
 				}
+				{
+					title: 'Keybase',
+					icon: 'key',
+					link: 'https://keybase.io/maximilian'
+				}
 		]
 
 		$rootScope.$on('$routeChangeSuccess', (event, current, previous) ->
