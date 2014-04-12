@@ -17,7 +17,10 @@ bower_components
 .idea
 .env
 
+public/js/*.js
 public/js/**/*.js
+public/html/*.html
 public/html/**/*.html
+public/css/*.css
 public/css/**/*.css
-app/**/*.js
+app/*
