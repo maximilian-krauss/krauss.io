@@ -73,6 +73,11 @@ app.run [
 					icon: 'key',
 					link: 'https://keybase.io/maximilian'
 				}
+				{
+					title: 'Mail',
+					icon: 'envelope',
+					link: 'mailto:max@krauss.io'
+				}
 		]
 
 		$rootScope.$on('$routeChangeSuccess', (event, current, previous) ->
