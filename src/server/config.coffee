@@ -10,6 +10,7 @@ config =
 		id: "winfy"
 		name: "Winfy"
 		description: "Spotifys missing mini player"
+		teaserUrl: "/static/images/winfy-teaser.jpg"
 	]
 	reporting:
 		host: "ping.krausshq.com"

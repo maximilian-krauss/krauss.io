@@ -7,10 +7,12 @@ angular.module('krauss.io').directive "krMarkdown", [
 			khqSrc: "="
 		link: (scope, elem, attrs) ->
 			converter = new Showdown.converter()
+
+			elem.html converter.makeHtml(elem.text()) if elem.text().length > 0
+
 			scope.$watch "khqSrc", (newValue) ->
-				if newValue is `undefined`
-					elem.html ""
-					return
+				return if newValue is `undefined`
+				
 				$http.get(newValue).success (markdown) ->
 					elem.html converter.makeHtml(markdown)
 					return

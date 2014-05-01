@@ -1,10 +1,13 @@
 <div class='directive project-list'>
 	<kr-loader ng-show='isBusy'>Loading, please wait...</kr-loader>
 
-	<dl class='uk-description-list uk-description-list-line' ng-repeat='project in projectList' ng-hide='isBusy'>
-		<dt>
-			<a ng-href='/projects/{{project.id}}' ng-bind='project.name'></a>
-		</dt>
-		<dd ng-bind='project.description'></dd>
-	</dl>
+	<div class="">
+		<div class="uk-panel uk-panel-box uk-width-1-2" ng-repeat="project in projectList" ng-hide="isBusy">
+				<div class="uk-panel-teaser">
+					<img ng-src="{{project.teaserUrl}}" alt="">
+				</div>
+      	<h3 class="uk-panel-title"><i class="uk-icon-bookmark"></i> <a ng-href="/projects/{{project.id}}" ng-bind="project.name"></a></h3>
+    		<p ng-bind="project.description"></p>
+		</div>
+	</div>
 </div>
