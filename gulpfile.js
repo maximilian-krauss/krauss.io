@@ -26,7 +26,7 @@ gulp.task('bower', function() {
 	return bower();
 });
 
-gulp.task('clean-directories', ['bower'], function() {
+gulp.task('clean-directories', function() {
 	gulp.src('./app/**/*.js')
 		.pipe(clean({ read: false, force: true }));
 
@@ -69,9 +69,14 @@ gulp.task('compile-client', ['clean-directories'], function() {
 		.pipe(gulp.dest('./public/css'))
 });
 
-gulp.task('default', ['heroku:production'] );
-
-gulp.task('heroku:production', [
+gulp.task('default', [
+	'bower',
 	'compile-server',
 	'compile-client'
 ]);
+
+gulp.task('heroku:production', [ 'default' ]);
+
+gulp.task('watch:src', function() {
+	gulp.watch('./src/**/*', [ 'compile-client', 'compile-server' ]);
+});
