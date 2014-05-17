@@ -25,11 +25,11 @@
   "dependencies": {
     "chai": "^1.9.1",
     "dotenv": "^0.2.8",
-    "express": "^3.5.1",
+    "express": "^3.6.0",
     "gulp": "^3.6.2",
     "gulp-bower": "0.0.3",
     "gulp-clean": "latest",
-    "gulp-coffee": "^1.4.2",
+    "gulp-coffee": "^1.4.3",
     "gulp-concat": "~2.2.0",
     "gulp-stylus": "^0.1.0",
     "gulp-util": "~2",
