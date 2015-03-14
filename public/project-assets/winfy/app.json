@@ -4,7 +4,7 @@
 	"version": "2.0.2.0",
 	"description": "Winfy, the missing mini player for spotify",
 
-	"setupUrl": "http://deploy.krausshq.com/winfy/setup.exe",
+	"setupUrl": "",
 	"githubUrl": "https://github.com/maximilian-krauss/Winfy",
 	"issueUrl": "https://github.com/maximilian-krauss/Winfy/issues",
 	"changelogUrl": "http://deploy.krausshq.com/winfy/changelog.json",
