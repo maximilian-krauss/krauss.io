@@ -5,7 +5,7 @@
     <h1 ng-bind="project.name" class="uk-article-title"></h1>
 
     <p class="uk-article-meta">Latest version: {{project.version}}</p>
-    <a ng-href="{{project.setupUrl}}" target="_blank" class="uk-button uk-button-success"><i class="fa fa-download icon-large"></i> Download </a>
+    <a ng-show="project.setupUrl" ng-href="{{project.setupUrl}}" target="_blank" class="uk-button uk-button-success"><i class="fa fa-download icon-large"></i> Download </a>
     <a ng-href="{{project.githubUrl}}" target="_blank" class="uk-button uk-button-primary"><i class="fa fa-github icon-large"></i> GitHub </a>
 
     <div class="uk-button-group github-info">
