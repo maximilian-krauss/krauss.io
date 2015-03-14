@@ -1,3 +1,5 @@
+:warning: **Due to latest changes to the Spotify Client Winfy does not work properly** :warning:
+
 Winfy is a free mini player for the desktop client of [Spotify](http://www.spotify.com) for Windows. If you use a Mac you should definitely try [Simplify](http://mmth.us/simplify/).
 
 Winfy displays the current track, artist and song cover in a small and fancy window right on your desktop. From there you can play/pause the current track or skip forward or backward.
