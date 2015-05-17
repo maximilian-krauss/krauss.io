@@ -40,6 +40,10 @@ app.use(require('connect-assets')({
   servePath: 'media/dist'
 }));
 
+app.use('/static/teasers', express.static(__dirname + '/media/teasers', {
+    maxAge: '364d',
+}));
+
 _.each(controllers, function(controller) {
   controller.apply({
     app: app,
