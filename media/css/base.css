@@ -1,0 +1,59 @@
+html, body {
+  font: 14px "Lato","Lucida Grande",Helvetica,Arial,sans-serif;
+  color: #333;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+a,
+p,
+span {
+  font-family: "Lato", "Lucida Grande", Helvetica, Arial, sans-serif
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-weight: lighter
+}
+
+a,
+a:hover {
+  color: #00B7FF
+  text-decoration: none
+}
+
+a {
+  font-weight: normal;
+  text-decoration: none;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.view-port {
+  width: 760px;
+  margin: 15px auto 0;
+}
+
+/* Header */
+header h1 a,
+header h1 a:hover {
+  color: #333;
+}
+
+header h1 {
+  margin-bottom: 10px;
+}
+
+header h3 {
+  color: #949494;
+  margin-top: 6px;
+  font-size: 16px;
+}

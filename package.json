@@ -1,0 +1,29 @@
+{
+  "name": "krauss.io",
+  "version": "2.0.0",
+  "description": "My private web",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/maximilian-krauss/krauss.io.git"
+  },
+  "author": "Maximilian Krauß <max@krauss.io>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/maximilian-krauss/krauss.io/issues"
+  },
+  "homepage": "https://github.com/maximilian-krauss/krauss.io",
+  "dependencies": {
+    "colors": "^1.1.0",
+    "compression": "^1.4.3",
+    "connect-assets": "^4.7.0",
+    "express": "^4.12.3",
+    "express-handlebars": "^2.0.0",
+    "lodash": "^3.7.0",
+    "require-directory": "^2.1.0",
+    "require-tree": "^1.0.1"
+  }
+}
