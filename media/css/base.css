@@ -94,10 +94,9 @@ header .social-icon.twitter i:hover {
 #teaser {
   background: no-repeat center center;
   background-size: cover;
-  background-image: url('/dynamic/teaser.jpg');
   display: block;
   width: 100%;
-  height: 300px;
+  height: 350px;
 }
 
 /* Menu */

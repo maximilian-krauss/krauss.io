@@ -16,6 +16,9 @@ var hbs = exphbs.create({
     title: function() {
       return 'krauss I/O';
     },
+    teaserUrl: function() {
+      return '/dynamic/teaser.jpg';
+    },
     css: function(file) {
       return bundles.css(file);
     },
