@@ -3,6 +3,11 @@ module.exports = function() {
       core = this.core;
 
   app.get('/', function(req, res) {
-    res.render('home');
+
+    core.feedFetcher(function(err, postItems) {
+      res.render('home', {
+        posts: postItems
+      });
+    });
   });
 };

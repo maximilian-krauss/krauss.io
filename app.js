@@ -14,7 +14,7 @@ var hbs = exphbs.create({
   defaultLayout: 'main',
   helpers: {
     title: function() {
-      return 'krauss I/O';
+      return 'Maximilian Krauß';
     },
     teaserUrl: function() {
       return '/dynamic/teaser.jpg';
