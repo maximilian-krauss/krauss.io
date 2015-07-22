@@ -1,0 +1,12 @@
+<ul class="latest-posts">
+  {{#each posts}}
+  <li>
+    <a href="{{ url }}">
+      <div>
+        <span class="title">{{ postTitle }}</span>
+        <span class="date">{{ timeAgo }}</span>
+      </div>
+    </a>
+  </li>
+  {{/each}}
+</ul>
