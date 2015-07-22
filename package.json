@@ -23,6 +23,7 @@
     "express": "^4.12.3",
     "express-handlebars": "^2.0.0",
     "lodash": "^3.7.0",
+    "memory-cache": "^0.1.4",
     "require-directory": "^2.1.0",
     "require-tree": "^1.0.1",
     "rssparser": "0.0.10",
