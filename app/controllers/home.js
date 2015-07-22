@@ -13,7 +13,7 @@ module.exports = function() {
     }
 
     core.feedFetcher(function(err, postItems) {
-      cache.put('postItems', postItems, 5000);
+      cache.put('postItems', postItems, thresholdInMS);
       res.render('home', {
         posts: postItems
       });
