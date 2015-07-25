@@ -1,5 +1,5 @@
 var cache = require('memory-cache'),
-    thresholdInMS = 10 * 60 * 1000; //5 Minutes
+    thresholdInMS = 60 * 60 * 1000; //1h
 
 module.exports = function() {
   var app = this.app,
