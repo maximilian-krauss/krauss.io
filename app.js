@@ -54,6 +54,12 @@ _.each(controllers, function(controller) {
   });
 });
 
+app.get('*', function(req, res) {
+  res.status(404).render('four-oh-four', {
+    title: 'Four-Oh-Four'
+  });
+});
+
 function fireAndForget() {
   var port = process.env.PORT || 7070;
 
