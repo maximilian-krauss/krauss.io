@@ -31,6 +31,7 @@ var hbs = exphbs.create({
 app.use(compression({ threshold: 512 }));
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
+app.set('etag', 'strong');
 
 app.use(require('connect-assets')({
   paths: [
