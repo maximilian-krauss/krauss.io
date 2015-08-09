@@ -4,11 +4,31 @@ var _ = require('lodash'),
     compression = require('compression'),
     exphbs = require('express-handlebars'),
     colors = require('colors'),
+    fs = require('fs'),
+    path = require('path'),
+    marked = require('marked'),
+    dotenv = require('dotenv').load(),
     app = express();
 
 var controllers = all('./app/controllers'),
     core = require('./app/core'),
     bundles = {};
+
+marked.setOptions({
+  renderer: new marked.Renderer(),
+  gfm: true,
+  tables: true,
+  breaks: true,
+  pedantic: false,
+  sanitize: true,
+  smartLists: true,
+  smartypants: true
+});
+
+function _renderMarkdown(filename) {
+  var fileContent = fs.readFileSync(path.join('content', filename + '.md'), { encoding: 'utf-8' });
+  return marked(fileContent);
+}
 
 var hbs = exphbs.create({
   defaultLayout: 'main',
@@ -24,7 +44,8 @@ var hbs = exphbs.create({
     },
     js: function(file) {
       return bundles.js(file);
-    }
+    },
+    md: _renderMarkdown
   }
 });
 
@@ -45,6 +66,10 @@ app.use(require('connect-assets')({
 }));
 
 app.use('/static/teasers', express.static(__dirname + '/media/teasers', {
+    maxAge: '364d',
+}));
+
+app.use('/static/images', express.static(__dirname + '/media/images', {
     maxAge: '364d',
 }));
 

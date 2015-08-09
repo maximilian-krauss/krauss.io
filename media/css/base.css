@@ -36,6 +36,18 @@ a {
   text-decoration: none;
 }
 
+.clearfix {
+  clear: both;
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
 .bold {
   font-weight: bold;
 }
@@ -73,7 +85,6 @@ header ul.social-icons li {
   display: inline;
 }
 
-
 header .social-icon a {
   color: #949494;
   padding: 0 15px 0 0;
@@ -92,7 +103,6 @@ header .social-icon.github i:hover {
 header .social-icon.twitter i:hover {
   color: #55acee;
 }
-
 
 /* Teaser */
 #teaser {
@@ -120,6 +130,13 @@ header .social-icon.twitter i:hover {
   text-decoration: none;
   padding: 5px 25px;
   font-size: 20px;
+}
+
+.view-port hr {
+  border: 0;
+  height: 1px;
+  width: 35%;
+  background-color: rgba(0,0,0,0.2);;
 }
 
 /* Posts */
