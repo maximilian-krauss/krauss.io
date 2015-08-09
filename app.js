@@ -32,7 +32,7 @@ function _renderMarkdown(filename) {
 }
 
 function _niceNumber(number) {
-  if(number < 2000) {
+  if(number < 11000) {
     return number;
   }
 
