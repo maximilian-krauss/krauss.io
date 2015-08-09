@@ -8,6 +8,7 @@ var _ = require('lodash'),
     path = require('path'),
     marked = require('marked'),
     morgan = require('morgan'),
+    moment = require('moment'),
     dotenv = require('dotenv').load(),
     app = express();
 
@@ -56,7 +57,8 @@ var hbs = exphbs.create({
       return bundles.js(file);
     },
     md: _renderMarkdown,
-    mkay: _niceNumber
+    mkay: _niceNumber,
+    duration: function(d) { return moment.duration(d).humanize(); }
   }
 });
 

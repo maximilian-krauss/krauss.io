@@ -31,12 +31,11 @@
 
 .music .item .info h3 {
   margin-top: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 6px;
 }
 
 .music .item .info .sub-info {
   margin: 0;
-  margin-bottom: 5px;
-  font-size: 85%;
+  font-size: 80%;
   color: rgba(0,0,0,0.4);
 }
