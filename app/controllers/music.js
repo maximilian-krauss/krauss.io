@@ -11,12 +11,12 @@ module.exports = function() {
   app.get('/music', function(req, res) {
     var cached = cache.get(cacheKey);
     if(cached) {
-      return res.render('home', { items: cached });
+      return res.render('music', { items: cached });
     }
 
     core.metaphor(likes, function(err, rendered) {
       cache.put(cacheKey, rendered, cacheThreshold);
-      res.render('music', { items: cached });
+      res.render('music', { items: rendered });
     });
   });
 };

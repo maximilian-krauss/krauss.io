@@ -1,0 +1,15 @@
+<div class="music">
+
+  {{#each items}}
+  <div class="item {{ type }}">
+    <div class="image left" style="background-image: url('{{ meta.previewImage }}')"></div>
+    <div class="info left">
+      <h3><a href="{{ url }}" target="_blank">{{ meta.title }}</a></h3>
+      <p class="sub-info plays">play count: {{ mkay meta.plays }}</p>
+      <p class="sub-info likes">likes: {{ mkay meta.likes }}
+    </div>
+    <div class="clearfix"></div>
+  </div>
+  {{/each}}
+
+</div>

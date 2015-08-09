@@ -1,5 +1,6 @@
 var _ = require('lodash'),
     endpoint = process.env.KRAUSS_METAPHOR_ENDPOINT,
+    apiKey = process.env.KRAUSS_METAPHOR_API_KEY,
     request = require('request');
 
 function _askMetaphor(items, callback) {
@@ -7,7 +8,7 @@ function _askMetaphor(items, callback) {
     url: endpoint,
     method: 'POST',
     headers: {
-      'X-AUTH-TOKEN': 'Soon ...'
+      'X-Api-Key': apiKey
     },
     json: items
   };

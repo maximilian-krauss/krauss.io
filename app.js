@@ -7,6 +7,7 @@ var _ = require('lodash'),
     fs = require('fs'),
     path = require('path'),
     marked = require('marked'),
+    morgan = require('morgan'),
     dotenv = require('dotenv').load(),
     app = express();
 
@@ -30,6 +31,15 @@ function _renderMarkdown(filename) {
   return marked(fileContent);
 }
 
+function _niceNumber(number) {
+  if(number < 2000) {
+    return number;
+  }
+
+  var kyed = (number / 1000).toFixed(1);
+  return kyed + 'k';
+}
+
 var hbs = exphbs.create({
   defaultLayout: 'main',
   helpers: {
@@ -45,10 +55,12 @@ var hbs = exphbs.create({
     js: function(file) {
       return bundles.js(file);
     },
-    md: _renderMarkdown
+    md: _renderMarkdown,
+    mkay: _niceNumber
   }
 });
 
+app.use(morgan('tiny'))
 app.use(compression({ threshold: 512 }));
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
