@@ -6,7 +6,7 @@
     <div class="info left">
       <h3><a href="{{ url }}" target="_blank">{{ meta.title }}</a></h3>
       <p class="sub-info duration">duration: {{ duration meta.duration }}</p>
-      <p class="sub-info plays">play count: {{ mkay meta.plays }}</p>
+      <p class="sub-info plays">play count: {{#if meta.plays}} {{ mkay meta.plays }} {{else}} &mdash; {{/if}}</p>
       <p class="sub-info likes">likes: {{ mkay meta.likes }}
     </div>
     <div class="clearfix"></div>

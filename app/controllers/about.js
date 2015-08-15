@@ -3,6 +3,6 @@ module.exports = function() {
       core = this.core;
 
   app.get('/about', function(req, res) {
-    res.render('about');
+    res.render('about', { subTitle: 'About' });
   });
 };
