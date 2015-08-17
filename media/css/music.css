@@ -18,6 +18,10 @@
   border-bottom-color: #2ebd59;
 }
 
+.music .item.vimeo {
+  border-bottom-color: #1ab7ea;
+}
+
 .music .item .image {
   width: 200px;
   height: 120px;
