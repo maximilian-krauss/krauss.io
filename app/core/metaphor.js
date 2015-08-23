@@ -31,11 +31,13 @@ module.exports = function(items, callback) {
     }
 
     var merged = _(rendered)
+      .chain()
+      .filter(function(r) { return r.type !== 'unknown' })
       .map(function(r) {
         return _.extend(r, items[r.index]);
       })
       .value();
 
-    callback(null, rendered);
+    callback(null, merged);
   });
 };
