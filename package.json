@@ -4,7 +4,8 @@
   "description": "My private web",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js"
+    "start": "node app.js",
+    "postinstall": "node ./node_modules/bower/bin/bower install"
   },
   "repository": {
     "type": "git",
@@ -17,6 +18,7 @@
   },
   "homepage": "https://github.com/maximilian-krauss/krauss.io",
   "dependencies": {
+    "bower": "^1.5.2",
     "colors": "^1.1.2",
     "compression": "^1.5.2",
     "connect-assets": "^5.0.1",

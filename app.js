@@ -88,6 +88,10 @@ app.use('/static/images', express.static(__dirname + '/media/images', {
     maxAge: '364d',
 }));
 
+app.use('/static/vendor', express.static(__dirname + '/bower_components', {
+    maxAge: '364d',
+}));
+
 _.each(controllers, function(controller) {
   controller.apply({
     app: app,
