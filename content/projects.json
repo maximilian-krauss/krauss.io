@@ -1,0 +1,9 @@
+[
+  {
+    "title": "metaphor",
+    "description": "metaphor is a web service for aggregating and normalizing meta data of media content like youtube videos or soundcloud songs.",
+    "git": {
+      "url": "https://github.com/maximilian-krauss/metaphor"
+    }
+  }
+]

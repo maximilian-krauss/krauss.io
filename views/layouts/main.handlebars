@@ -7,11 +7,12 @@
       {{/if}}
       {{ title }}
     </title>
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <link rel='stylesheet' href='//fonts.googleapis.com/css?family=Lato:400,900'/>
     {{{ css 'base' }}}
     {{{ css 'about-me' }}}
     {{{ css 'music' }}}
+    {{{ css 'projects' }}}
   </head>
   <body>
     <div class="web">
@@ -33,12 +34,15 @@
         </ul>
       </header>
 
-      <section id="teaser" style="background-image: url('{{{ teaserUrl }}}');"></section>
+      <section id="teaser" style="background-image: url('{{#if ./teaserUrl}} {{{ ./teaserUrl }}} {{else}} {{{ teaserUrl }}}{{/if}}');"></section>
 
       <nav class="view-port menu">
         <ul>
           <li><a href="/">Home</a></li>
           <li><a href="/about">About</a></li>
+          <!-- not yet...
+          <li><a href="/projects">Projects</a></li>
+          -->
           <li><a href="/music">Music</a></li>
         </ul>
 

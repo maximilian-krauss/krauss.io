@@ -1,0 +1,12 @@
+<div class="projects">
+
+  {{#each projects}}
+  <div class="item">
+    <h3 class="title">{{ ./title }}</h3>
+    <p class="description">{{ ./description }}</p>
+  </div>
+  <div class="links">
+    <a href="{{ ./git.url }}" target="_blank">Repository@Github</a>
+  </div>
+  {{/each}}
+</div>
