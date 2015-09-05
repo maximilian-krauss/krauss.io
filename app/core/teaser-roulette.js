@@ -1,23 +1,15 @@
 var fs = require('fs'),
-    path = require('path');
+    path = require('path'),
+    teaserPath = path.join('media', 'teasers');
 
-_randomize = function(array) {
+function _randomize(array) {
   return array[Math.floor(Math.random() * array.length)]
 };
 
-module.exports = function(cb) {
-  var teaserPath = path.join('media', 'teasers');
+function _doSync() {
+  return _randomize(fs.readdirSync(teaserPath));
+}
 
-  fs.readdir(teaserPath, function(err, teasers) {
-    if(err) {
-      return cb(err);
-    }
-
-    if(!teasers.length) {
-      return cb(new Error('No teaser images found.'));
-    }
-
-    var teaserImagePath = path.join(teaserPath, _randomize(teasers));
-    return cb(null, teaserImagePath);
-  });
+module.exports = function() {
+    return _doSync();
 };

@@ -48,7 +48,8 @@ var hbs = exphbs.create({
       return 'Maximilian Krauß';
     },
     teaserUrl: function() {
-      return '/dynamic/teaser.jpg';
+      //return '/dynamic/teaser.jpg';
+      return '/static/teasers/' + core.teaserRoulette();
     },
     css: function(file) {
       return bundles.css(file);
