@@ -17,6 +17,7 @@
     "url": "https://github.com/maximilian-krauss/krauss.io/issues"
   },
   "homepage": "https://github.com/maximilian-krauss/krauss.io",
+  "engines" : { "node" : ">=4.0" },
   "dependencies": {
     "bower": "^1.5.2",
     "colors": "^1.1.2",
@@ -25,6 +26,7 @@
     "dotenv": "^1.2.0",
     "express": "^4.13.3",
     "express-handlebars": "^2.0.1",
+    "feed-read": "0.0.1",
     "lodash": "^3.10.1",
     "marked": "^0.3.5",
     "memory-cache": "^0.1.4",
@@ -33,7 +35,6 @@
     "request": "^2.61.0",
     "require-directory": "^2.1.1",
     "require-tree": "^1.0.1",
-    "rssparser": "0.0.10",
     "string": "^3.3.1"
   }
 }
