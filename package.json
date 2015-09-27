@@ -17,7 +17,7 @@
     "url": "https://github.com/maximilian-krauss/krauss.io/issues"
   },
   "homepage": "https://github.com/maximilian-krauss/krauss.io",
-  "engines" : { "node" : ">=4.0" },
+  "engines" : { "node" : ">=4.1" },
   "dependencies": {
     "bower": "^1.5.2",
     "colors": "^1.1.2",
