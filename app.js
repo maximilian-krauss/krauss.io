@@ -10,7 +10,8 @@ var _ = require('lodash'),
     morgan = require('morgan'),
     moment = require('moment'),
     dotenv = require('dotenv').load(),
-    app = express();
+    app = express(),
+    meerkat = require('meerkat-client');
 
 var controllers = all('./app/controllers'),
     core = require('./app/core'),
@@ -104,6 +105,13 @@ app.get('*', function(req, res) {
     title: 'Four-Oh-Four'
   });
 });
+
+if(process.env.NODE_ENV === 'production') {
+  const meerkatClient = new meerkat({
+    endpoint: process.env.KRAUSS_MEERKAT_ENDPOINT,
+    token: process.env.KRAUSS_MEERKAT_TOKEN
+  });
+}
 
 function fireAndForget() {
   var port = process.env.PORT || 7070;
