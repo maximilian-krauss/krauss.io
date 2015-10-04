@@ -106,12 +106,10 @@ app.get('*', function(req, res) {
   });
 });
 
-if(process.env.NODE_ENV === 'production') {
-  const meerkatClient = new meerkat({
-    endpoint: process.env.KRAUSS_MEERKAT_ENDPOINT,
-    token: process.env.KRAUSS_MEERKAT_TOKEN
-  });
-}
+const meerkatClient = new meerkat({
+  endpoint: process.env.KRAUSS_MEERKAT_ENDPOINT,
+  token: process.env.KRAUSS_MEERKAT_TOKEN
+});
 
 function fireAndForget() {
   var port = process.env.PORT || 7070;
