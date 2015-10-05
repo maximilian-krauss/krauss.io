@@ -11,7 +11,7 @@ var _ = require('lodash'),
     moment = require('moment'),
     dotenv = require('dotenv').load(),
     app = express(),
-    meerkat = require('meerkat-client');
+    kugelblitz = require('kugelblitz-client');
 
 var controllers = all('./app/controllers'),
     core = require('./app/core'),
@@ -106,7 +106,7 @@ app.get('*', function(req, res) {
   });
 });
 
-const meerkatClient = new meerkat({
+const kgb = new kugelblitz({
   endpoint: process.env.KUGELBITZ_ENDPOINT,
   token: process.env.KUGELBLITZ_TOKEN
 });
