@@ -107,7 +107,7 @@ app.get('*', function(req, res) {
 });
 
 const kgb = new kugelblitz({
-  endpoint: process.env.KUGELBITZ_ENDPOINT,
+  endpoint: process.env.KUGELBLITZ_ENDPOINT,
   token: process.env.KUGELBLITZ_TOKEN
 });
 
