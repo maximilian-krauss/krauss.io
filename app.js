@@ -107,8 +107,8 @@ app.get('*', function(req, res) {
 });
 
 const meerkatClient = new meerkat({
-  endpoint: process.env.KRAUSS_MEERKAT_ENDPOINT,
-  token: process.env.KRAUSS_MEERKAT_TOKEN
+  endpoint: process.env.KUGELBITZ_ENDPOINT,
+  token: process.env.KUGELBLITZ_TOKEN
 });
 
 function fireAndForget() {
