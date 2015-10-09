@@ -6,6 +6,7 @@ var _ = require('lodash'),
 
 module.exports = function() {
   var app = this.app,
+      kugelblitz = this.kugelblitz,
       core = this.core;
 
   app.get('/music', function(req, res) {
@@ -15,6 +16,11 @@ module.exports = function() {
     }
 
     core.metaphor(likes, function(err, rendered) {
+      if(err) {
+        kugelblitz.reportError(err).then(_ => { return res.redirect('/500'); });
+        return;
+      }
+
       cache.put(cacheKey, rendered, cacheThreshold);
       res.render('music', { subTitle: 'Music', items: rendered });
     });

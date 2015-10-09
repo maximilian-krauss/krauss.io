@@ -1,5 +1,7 @@
+'use strict'
+
 var _ = require('lodash'),
-    all = require('require-tree')
+    all = require('require-tree'),
     express = require('express'),
     compression = require('compression'),
     exphbs = require('express-handlebars'),
@@ -11,11 +13,17 @@ var _ = require('lodash'),
     moment = require('moment'),
     dotenv = require('dotenv').load(),
     app = express(),
+    config = require('./app/config'),
     kugelblitz = require('kugelblitz-client');
 
 var controllers = all('./app/controllers'),
     core = require('./app/core'),
     bundles = {};
+
+const kgb = new kugelblitz({
+  endpoint: config.kugelblitz.endpoint,
+  token: config.kugelblitz.token
+});
 
 marked.setOptions({
   renderer: new marked.Renderer(),
@@ -64,7 +72,7 @@ var hbs = exphbs.create({
   }
 });
 
-app.use(morgan('tiny'))
+app.use(morgan('tiny'));
 app.use(compression({ threshold: 512 }));
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
@@ -77,6 +85,8 @@ app.use(require('connect-assets')({
   ],
   helperContext: bundles,
   build: true,
+  compress: config.production,
+  gzip: config.production,
   fingerprinting: true,
   servePath: 'media/dist'
 }));
@@ -93,22 +103,25 @@ app.use('/static/vendor', express.static(__dirname + '/bower_components', {
     maxAge: '364d',
 }));
 
+if(config.production) {
+  app.set('env', process.env);
+  app.set('json spaces', undefined);
+  app.enable('view cache');
+}
+
 _.each(controllers, function(controller) {
   controller.apply({
     app: app,
-    core: core
+    core: core,
+    kugelblitz: kugelblitz
   });
 });
 
+app.get('/500', (req, res) => { res.render('fuckups/http-500', { title: 'HTTP 500' }); });
 app.get('*', function(req, res) {
-  res.status(404).render('four-oh-four', {
+  res.status(404).render('fuckups/http-404', {
     title: 'Four-Oh-Four'
   });
-});
-
-const kgb = new kugelblitz({
-  endpoint: process.env.KUGELBLITZ_ENDPOINT,
-  token: process.env.KUGELBLITZ_TOKEN
 });
 
 function fireAndForget() {

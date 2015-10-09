@@ -1,8 +1,11 @@
-var cache = require('memory-cache'),
-    thresholdInMS = 60 * 60 * 1000; //1h
+'use strict'
+
+const cache = require('memory-cache'),
+      thresholdInMS = 60 * 60 * 1000; //1h
 
 module.exports = function() {
   var app = this.app,
+      kugelblitz = this.kugelblitz,
       core = this.core;
 
   app.get('/', function(req, res) {
@@ -12,7 +15,12 @@ module.exports = function() {
       return res.render('home', { posts: cachedItems })
     }
 
-    core.feedFetcher(function(err, postItems) {
+    core.feedFetcher((err, postItems) => {
+      if(err) {
+        kugelblitz.reportError(err).then(_ => { res.redirect('/500'); });
+        return;
+      }
+
       cache.put('postItems', postItems, thresholdInMS);
       res.render('home', {
         posts: postItems
