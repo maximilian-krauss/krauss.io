@@ -22,7 +22,8 @@ var controllers = all('./app/controllers'),
 
 const kgb = new kugelblitz({
   endpoint: config.kugelblitz.endpoint,
-  token: config.kugelblitz.token
+  token: config.kugelblitz.token,
+  callbackUrl: config.kugelblitz.callbackUrl
 });
 
 marked.setOptions({
