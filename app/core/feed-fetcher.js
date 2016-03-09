@@ -2,7 +2,7 @@ var _ = require('lodash'),
     parser = require('feed-read'),
     moment = require('moment');
 
-var feedUrl = 'https://blog.krauss.io/rss/';
+var feedUrl = 'https://max.krauss.io/rss/';
 
 module.exports = function(cb) {
 
