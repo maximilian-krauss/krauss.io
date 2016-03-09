@@ -9,4 +9,4 @@ You can follow me on [Twitter][twitter], check out my repos on [Github][github] 
 
 [twitter]: https://twitter.com/DonnieBerlin
 [github]: https://github.com/maximilian-krauss
-[blog]: https://blog.krauss.io
+[blog]: https://max.krauss.io
